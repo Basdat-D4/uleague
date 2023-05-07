@@ -1,0 +1,75 @@
+{% comment %} Sebagai template dashboard sekaligus parent dari template yang lainnya {% endcomment %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    {% block meta %}
+    <head>
+        <title>Beli Tiket</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    </head>
+    {% endblock meta %}
+
+    <body>
+        {% block content %}
+        <div class="page-title">
+            <h1>Beli Tiket</h1>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="daftar-rapat" style="margin: 40px 30px;">
+                    <h1 style="margin-bottom: 20px;color: #7067f5; text-align: center;">STADIUM [?]</h1>
+                    <table style="width: 70%; text-align: center; border-collapse: collapse; margin-left:auto;margin-right:auto; " border="1">
+                        <tr style="color: #55509c;">
+                                <th>List Waktu</th>
+                                <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>07.00 - 09.00</td>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="next">List Pertandingan</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <table style="width: 67%; text-align: center; border-collapse: collapse; margin-left:auto;margin-right:auto;" border="1">
+                      <tr style="color: #55509c;">
+                              <th>Tim 1</th>
+                              <th>Tim 2</th>
+                              <th> </th>
+
+
+                      </tr>                      
+                        <tr>
+                            <td>A</td>
+                            <td>B</td>
+                            <td><a href="">Pilih</a></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>D</td>
+                            <td><a href="">Pilih</a></td>
+                        </tr>
+                        <tr>
+                          <td>E</td>
+                          <td>F</td>
+                          <td><a href="">Pilih</a></td>
+                      </tr>
+                      <tr>
+                        <td>F</td>
+                        <td>G</td>
+                        <td><a href="">Pilih</a></td>
+                    </tr>
+                    </table>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

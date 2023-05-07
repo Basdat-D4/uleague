@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pembelian Tiket Sepakbola</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+  </head>
+  
+  <body class="bg-gray-100">
+    <div class="container mx-auto my-8">
+      <h1 class="text-3xl flex justify-center font-bold mb-4">Pembelian Tiket Sepakbola</h1>
+      
+      <form class="mx-auto w-full max-w-lg" action="/pilih-stadium" method="post">
+
+        <div class="flex flex-wrap mb-6">
+          <label class="w-full mb-2" for="dropdown">Jenis Tiket :  </label>
+          <select id="dropdown">
+            <option value="option1">VIP</option>
+            <option value="option2">Main East</option>
+            <option value="option3">Kategori 1</option>
+            <option value="option3">Kategori 2</option>
+          </select>
+        </div>
+
+        <div class="flex flex-wrap mb-6">
+          <label class="w-full mb-2" for="dropdown">Pembayaran : </label>
+          <select id="dropdown">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option3">Option 4</option>
+          </select>
+        </div>
+       
+        <div class="flex items-center justify-center">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="beli">Beli</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+
+
+{% endblock content %}
