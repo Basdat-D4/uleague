@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('example_app.urls')),
     path('rapat/', include('rapat.urls')),
+    path('mengelola_tim/', include('mengelola_tim.urls')),
+    path('peminjaman_stadium/', include('peminjaman_stadium.urls')),
+
 ]

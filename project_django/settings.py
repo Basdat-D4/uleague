@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'example_app',
-    'rapat'
+    'rapat',
+    'mengelola_tim',
+    'peminjaman_stadium',
 ]
 
 MIDDLEWARE = [

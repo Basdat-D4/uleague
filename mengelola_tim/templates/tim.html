@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div class="container mx-auto my-8">
+		<h1 class="flex justify-center text-3xl font-bold mb-4">TIM</h1>
+        
+        <h5 class="flex justify-center text-3xl font-bold mb-4">Pemain</h5>
+        <div class="mt-8 flex justify-center">
+            <table class="table-auto border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-200">
+                        <th class="py-2 px-4 border">Nama Pemain</th>
+                        <th class="py-2 px-4 border">No HP</th>
+                        <th class="py-2 px-4 border">Tanggal Lahir</th>
+                        <th class="py-2 px-4 border">Is Captain</th>
+                        <th class="py-2 px-4 border">Posisi</th>
+                        <th class="py-2 px-4 border">NPM</th>
+                        <th class="py-2 px-4 border">Jenjang</th>
+                        <th class="py-2 px-4 border">Action</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr class="bg-gray-200 border border-black border-2">
+                        <td class="py-2 px-4 border">Wendeline</td>
+                        <td class="py-2 px-4 border">1762534165</td>
+                        <td class="py-2 px-4 border">20/12/2004</td>
+                        <td class="py-2 px-4 border">FALSE</td>
+                        <td class="py-2 px-4 border">Kiper</td>
+                        <td class="py-2 px-4 border">34SPHVPISZ</td>
+                        <td class="py-2 px-4 border">S1</td>
+                        <td class="py-2 px-4 border">
+                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Make Caption Delete</button><br>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <h5 class="flex justify-center text-3xl font-bold mb-4">          </h5>
+        <h5 class="flex justify-center text-3xl font-bold mb-4">          </h5>
+
+
+        <h5 class="flex justify-center text-3xl font-bold mb-4">Pelatih</h5>
+        <div class="mt-8 flex justify-center">
+            <table class="table-auto border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-200">
+                        <th class="py-2 px-4 border">Nama</th>
+                        <th class="py-2 px-4 border">No HP</th>
+                        <th class="py-2 px-4 border">Email</th>
+                        <th class="py-2 px-4 border">Alamat</th>
+                        <th class="py-2 px-4 border">Spesialisasi</th>
+                        <th class="py-2 px-4 border">Action</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr class="bg-gray-200 border border-black border-2">
+                        <td class="py-2 px-4 border">Alzher</td>
+                        <td class="py-2 px-4 border">1862534165</td>
+                        <td class="py-2 px-4 border">alzher@gmail.com</td>
+                        <td class="py-2 px-4 border">Nirwana Estate</td>
+                        <td class="py-2 px-4 border">Pelatih Fisik</td>
+                        <td class="py-2 px-4 border">
+                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Delete</button><br>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-16 flex items-center justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Pemain</button>
+            
+        </div>
+
+        <div class="mt-5 flex items-center justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Pelatih</button>
+            
+        </div>
+	</div>
+</body>
+
+{% endblock content %}

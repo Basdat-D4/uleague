@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div class="container mx-auto my-8">
+        <h5 class="flex justify-center text-3xl font-bold mb-4">          </h5>
+        <h5 class="flex justify-center text-3xl font-bold mb-4">          </h5>
+
+        <div class="mt-8 flex justify-center">
+          <h5 class="flex justify-center text-3xl font-bold mb-4">List Waktu </h5>
+      </div>
+      <div class="mt-1 flex justify-center">
+          <button class="hover:bg-blue-700 text-blue font-bold py-1 px-4 rounded-full">Stadium Gelora Bungkarno</button><br>
+        </h5>
+    </div>
+
+        <div class="mt-8 flex justify-center">
+            <table class="table-auto border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-200">
+                        <th class="py-2 px-4 border">List Waktu</th>
+                        <th class="py-2 px-4 border">Action</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr class="bg-gray-200 border border-black border-2">
+                        <td class="py-2 px-4 border">01/06/2023 7:31:12</td>
+                        <td class="py-2 px-4 border">
+                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Pesan</button><br>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                  <tr class="bg-gray-200 border border-black border-2">
+                      <td class="py-2 px-4 border">01/03/2023 5:31:12</td>
+                      <td class="py-2 px-4 border">
+                          <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Pesan</button><br>
+                      </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+	</div>
+</body>
+
+{% endblock content %}
