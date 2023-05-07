@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div class="container mx-auto my-8">
+		<h1 class="flex justify-center text-3xl font-bold mb-4">Input Peristiwa</h1>
+        <div class="mt-8 flex justify-center">
+            <table class="table-auto border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-200">
+                        <th class="py-2 px-4 border">Tim 1</th>
+                        <th class="py-2 px-4 border">Tim 2</th>
+                        <th class="py-2 px-4 border">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-200 border border-black border-2">
+                        <td class="py-2 px-4 border">Persija</td>
+                        <td class="py-2 px-4 border">Barcelona</td>
+                        <td class="py-2 px-4 border">
+                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Masukkan Peristiwa Tim 1</button><br>
+                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Masukkan Peristiwa TIm 2</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-16 flex items-center justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Submit</button>
+        </div>
+	</div>
+</body>
+
+{% endblock content %}

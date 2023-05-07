@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'pembelian_tiket',
     'list_pertandingan',
     'history_rapat',
+    'authentication'
 ]
 
 MIDDLEWARE = [
