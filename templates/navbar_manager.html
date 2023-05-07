@@ -1,0 +1,69 @@
+{% include 'base.html' %}
+{% block content %}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        background-color: #5c2aea;
+        overflow: hidden;
+        position: sticky;
+    }
+
+    .navbar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color:beige;
+        color: black;
+    }
+
+
+    .logout-btn {
+        background-color:#5c2aea;
+        color: white;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1px;
+        margin-right: 2px;
+        position: absolute;
+        top: 6px;
+        right: 10px;
+    }
+
+    .logout-btn:hover {
+        background-color:red;
+        color: black;
+    }
+</style>
+
+
+<div class="navbar">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#mengelolatim">Mengelola Tim</a>
+    <a href="#peminjamanstadium">Peminjaman Stadium</a>
+    <a href="#listpertandingan">List Pertandingan</a>
+    <a href="#historyrapat">History Rapat</a>
+    <button class="logout-btn">Logout</button>
+</div>
+
+{% endblock content %}
+
+<body>
+    {% block content %}{% endblock content %}
+</body>
+
+</html>

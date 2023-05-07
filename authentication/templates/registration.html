@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+	width: 400px;
+	margin:auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+    margin-top: 250px;
+}
+
+h2 {
+	text-align: center;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #5c2aea;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #5c2aea;
+}
+</style>
+
+<body>
+    <form>
+		<h2>Registration Form</h2>
+		<label for="role">Choose a Role:</label>
+		<select id="role" name="role" required>
+			<option value="">Select a Role</option>
+			<option value="manager">Manager</option>
+			<option value="penonton">Penonton</option>
+			<option value="panitia">Panitia</option>
+		</select>
+		<br>
+		<input type="submit" value="Select">
+	</form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+    <div class="topnav">
+		<a href="#dashboard">Dashboard</a>
+		<a href="#pembeliantiket">Pembelian Tiket</a>
+		<a href="#listpertandingan">List Pertandingan</a>
+        <button class="logout-btn">Logout</button>
+	</div>
+</head>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.topnav {
+    background-color: #5c2aea;
+    overflow: hidden;
+    position: sticky;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color:beige;
+    color: black;
+}
+
+
+.logout-btn {
+    background-color:#5c2aea;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.logout-btn:hover {
+    background-color:red;
+    color: black;
+}
+</style>
+
+<body>
+    {% block content %}{% endblock content %}
+</body>
+</html>

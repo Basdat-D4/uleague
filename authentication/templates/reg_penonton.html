@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<style>
+form {
+	width: 400px;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+    margin-top: 100px;
+}
+
+h2 {
+	text-align: center;
+    color:#5c2aea
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5c2aea;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+input[type="submit"]:hover {
+  background-color: #5c2aea;
+}
+</style>
+
+<body>
+    <form>
+		<h2>Penonton Registration Form</h2>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<br>
+		<label for="company">Nama Depan:</label>
+		<input type="text" id="company" name="company" required>
+		<br>
+        <label for="company">Nama Belakang:</label>
+		<input type="text" id="company" name="company" required>
+		<br>
+        <label for="company">Nomor HP:</label>
+		<input type="text" id="company" name="company" required>
+		<br>
+        <label for="company">Email:</label>
+		<input type="text" id="company" name="company" required>
+		<br>
+        <label for="company">Alamat:</label>
+		<input type="text" id="company" name="company" required>
+		<br>
+        <label for="role">Status:</label>
+		<select id="role" name="role" required>
+			<option value="">Select a Role</option>
+			<option value="manager">Mahasiswa</option>
+			<option value="penonton">Dosen</option>
+			<option value="panitia">Alumni</option>
+            <option value="penonton">Tendik</option>
+			<option value="panitia">Umum</option>
+		</select>
+        
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>
