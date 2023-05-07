@@ -9,3 +9,6 @@ def show_data_tiket(request):
 
 def show_beli_tiket(request):
     return render(request, "beli_tiket.html")
+
+def show_list_tiket(request):
+    return render(request, "list_tiket.html")

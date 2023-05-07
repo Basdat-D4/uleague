@@ -1,0 +1,38 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    {% block meta %}
+    <head>
+        <title>Beli Tiket</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    </head>
+    {% endblock meta %}
+
+    <body>
+        {% block content %}
+        <div class="wrapper">
+            <div class="box">
+                <div class="daftar-rapat" style="margin: 40px 30px;">
+                    <h1 style="margin-bottom: 20px;color: #0f0f12; text-align: center;">STADIUM [?]</h1>
+                    <table style="width: 800px; text-align: center; border-collapse: collapse; margin-left:auto;margin-right:auto;" border="1">
+                        <tr style="color: #55509c;">
+                                <th>List Waktu</th>
+                                <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>07.00 - 09.00</td>
+                            <td style="height:100px;">
+                                <button onclick="window.location.href=''" style="background-color: cornflowerblue; height: 60px; width: 150px;">List Pertandingan</button></td>
+                        </tr>
+                    </table>
+                </div>
+
+        {% endblock %}
+    </body>
+</html>
