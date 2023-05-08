@@ -11,4 +11,7 @@ def logout_user(request):
     return HttpResponseRedirect("/")
 
 def register_user(request):
-    return render(request, 'reg_penonton.html', {})
+    return render(request, 'registration.html', {})
+
+def show_dashboard(request):
+    return render(request, 'dashboard_panitia.html')

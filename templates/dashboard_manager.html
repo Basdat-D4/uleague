@@ -1,16 +1,128 @@
+{% block content %}
+{% include 'navbar_manager.html' %}
 
+<style>
 
+h1 {
+    font-weight: bold;
+    font-size: 25px;
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
-</head>
-<body>
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+
+}
+
+.container2 {
+    flex-direction: column;
+    align-items: left;
     
-</body>
-</html>
+}
+
+.container3 {
+    margin-top: 50px;
+}
+
+
+#table1 {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    background-color: lavender;
+    border-collapse: collapse;
+}
+
+#table2 {
+    margin-left: 50px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+#team {
+    align-items: center;
+    width: 100px;
+}
+
+#profile {
+  width: 120px;
+  padding-top: 10px;
+  font-weight: bold;
+  text-align: left;
+  background-color: #5c2aea;
+  color: white;
+  border: 1px solid white;
+  border-right: #5c2aea;
+  border-top: #5c2aea;
+
+}
+
+td {
+  text-align: center;
+  border: 1px solid #5c2aea;
+
+}
+
+th {
+  background-color: #5c2aea;
+  font-size: 22px;
+  color: white;
+  border: 1px solid #5c2aea;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+</style>
+
+
+<div class = "container">
+    <div class = "container2">
+    <h1>User Profile </h1>
+    <table id = "table1">
+        <tr>
+          <td id = "profile">Nama:</td>
+          <td>Arya Daffa</td>
+        </tr>
+        <tr>
+          <td id = "profile">Nomor HP:</td>
+          <td>08123456789</td>
+        </tr>
+        <tr>
+          <td id = "profile">Email:</td>
+          <td>aryadaffa@example.com</td>
+        </tr>
+        <tr>
+          <td id = "profile">Alamat:</td>
+          <td>Jl. Panda No. 12</td>
+        </tr>
+        <tr>
+          <td id = "profile">Status:</td>
+          <td>Mahasiswa</td>
+        </tr>
+      </table>
+    </div>
+    <div class = "container3">
+    <table id = "table2">
+        <thead>
+        <tr id = "team">
+            <th>Nama Tim</th>
+            <th>Universitas</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Belum Membuat Tim</td>
+            <td>-</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock content %}
