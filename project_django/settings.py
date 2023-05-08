@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example_app',
     'rapat',
-    'authentication'
+    'authentication',
+    'mengelola_tim',
+    'peminjaman_stadium',
 ]
 
 MIDDLEWARE = [

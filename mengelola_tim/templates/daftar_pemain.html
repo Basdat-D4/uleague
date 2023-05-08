@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>DAFTAR PEMAIN</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+  </head>
+  
+  <body class="bg-gray-100">
+    <div class="container mx-auto my-8">
+      <h1 class="text-3xl flex justify-center font-bold mb-4">DAFTAR PEMAIN</h1>
+      
+      <form class="mx-auto w-full max-w-lg" action="/pilih-stadium" method="post">
+
+        <div class="flex flex-wrap mb-6;">
+          <label class="w-full mb-2" for="form">Pemain yang mau didaftarkan :  </label>
+          <select id="dropdown">
+            <option value="option1">Kiper</option>
+            <option value="option2">Penyerang</option>
+            <option value="option3">Bek</option>
+            <option value="option3">Gelandang</option>
+          </select>        
+        </div>
+
+        <div class="flex flex-wrap mb-6;">
+          <label class="w-full mb-2" for="form"> </label>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <submit class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="submit">Submit</submit>
+        </div>
+      </form>
+    </div>
+  </body>
+
+
+
+{% endblock content %}
