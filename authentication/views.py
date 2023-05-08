@@ -12,3 +12,6 @@ def logout_user(request):
 
 def register_user(request):
     return render(request, 'registration.html', {})
+
+def show_dashboard(request):
+    return render(request, 'dashboard_panitia.html')

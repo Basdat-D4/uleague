@@ -4,30 +4,43 @@
 <style>
 
 h1 {
-    margin-top: 275px;
-}
-#table1 {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding-top: 1px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  background-color: lavender;
-  border: 1px solid;
-  width: 300px;
+    font-weight: bold;
+    font-size: 25px;
+
 }
 
-.flex-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 100px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+
+}
+
+.container2 {
+    flex-direction: column;
+    align-items: left;
+    
+}
+
+.container3 {
+    margin-top: 50px;
+}
+
+
+#table1 {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    background-color: lavender;
+    border-collapse: collapse;
 }
 
 #table2 {
-  margin: auto;
-  border: 1px solid;
-  border-collapse: collapse;
+    margin-left: 50px;
+    text-align: center;
+    border-collapse: collapse;
 }
 
 
@@ -36,74 +49,80 @@ h1 {
     width: 100px;
 }
 
-td:first-child {
+#profile {
   width: 120px;
   padding-top: 10px;
   font-weight: bold;
+  text-align: left;
+  background-color: #5c2aea;
+  color: white;
+  border: 1px solid white;
+  border-right: #5c2aea;
+  border-top: #5c2aea;
+
 }
 
-td:last-child {
+td {
   text-align: center;
+  border: 1px solid #5c2aea;
+
+}
+
+th {
+  background-color: #5c2aea;
+  font-size: 22px;
+  color: white;
+  border: 1px solid #5c2aea;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>
 
-<div>
+
+<div class = "container">
+    <div class = "container2">
+    <h1>User Profile </h1>
     <table id = "table1">
-        <h1>User Profile </h1>
         <tr>
-          <td>Nama:</td>
+          <td id = "profile">Nama:</td>
           <td>Arya Daffa</td>
         </tr>
         <tr>
-          <td>Nomor HP:</td>
+          <td id = "profile">Nomor HP:</td>
           <td>08123456789</td>
         </tr>
         <tr>
-          <td>Email:</td>
+          <td id = "profile">Email:</td>
           <td>aryadaffa@example.com</td>
         </tr>
         <tr>
-          <td>Alamat:</td>
+          <td id = "profile">Alamat:</td>
           <td>Jl. Panda No. 12</td>
         </tr>
         <tr>
-          <td>Status:</td>
+          <td id = "profile">Status:</td>
           <td>Mahasiswa</td>
         </tr>
       </table>
-</div>
-<div class = "flex-container">
-    <div>
+    </div>
+    <div class = "container3">
     <table id = "table2">
         <thead>
-          <tr id = "team">
-            <th>Team Name</th>
-            <th>Country</th>
-            <th>Coach</th>
-            <th>Stadium</th>
-          </tr>
+        <tr id = "team">
+            <th>Nama Tim</th>
+            <th>Universitas</th>
+        </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Manchester United</td>
-            <td>England</td>
-            <td>Ole Gunnar Solskjaer</td>
-            <td>Old Trafford</td>
-          </tr>
-          <tr>
-            <td>Real Madrid</td>
-            <td>Spain</td>
-            <td>Zinedine Zidane</td>
-            <td>Santiago Bernabeu</td>
-          </tr>
-          <tr>
-            <td>Bayern Munich</td>
-            <td>Germany</td>
-            <td>Hans-Dieter Flick</td>
-            <td>Allianz Arena</td>
-          </tr>
+        <tr>
+            <td>Belum Membuat Tim</td>
+            <td>-</td>
+        </tr>
+
         </tbody>
-      </table>
-    </div>
+    </table>
+</div>
 </div>
 {% endblock content %}
