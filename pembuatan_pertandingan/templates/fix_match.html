@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<style>
+    .head-text-table td{
+     text-align: center;
+    }
+    .head-text-table{
+     border-radius: 10px;
+    }
+ 
+    .bottom-line {
+     border-bottom: 1px solid #5C2AEA;
+    }
+    .btn{
+     padding: 0.5rem 2rem;
+    }
+    .update-btn{
+     background-color: #5C2AEA;
+     color: white;
+    }
+ 
+    .add-btn{
+     background-color: #5C2AEA;
+     color: white;
+    }
+ 
+    .delete-btn{
+     background-color: white;
+     border:1px solid #5C2AEA;
+    }
+ 
+    table {
+     border-collapse: collapse;
+     border-radius: 10px;
+    }
+    td{
+     padding: 1rem 2rem;
+     border-bottom: #5C2AEA;
+     border-bottom: solid 1px #5C2AEA;
+    }
+ 
+    th{
+     padding: 1em;
+    }
+ 
+ 
+  
+ </style>
+
+<body class="bg-gray-100">
+	<div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Pembuatan</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+
+    <p class="font-bold text-xl text-center">
+        Buat Pertandingan
+    </p>
+    
+    <div class="mx-auto mt-10" style="max-width: 50vw; min-width: 50vw;"> 
+        <div class="">
+            <div class="grid grid-cols-2 mt-5">
+                <p class="font-medium">Pilih Wasit Utama</p>
+                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                    <option value="GBK">Johson</option>
+                    <option value="BATAKAN">Bimbul</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-2 mt-5">
+                <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
+                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                    <option value="GBK">Johnson</option>
+                    <option value="BATAKAN">Batakan</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-2 mt-5">
+                <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
+                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                    <option value="GBK">Johson</option>
+                    <option value="BATAKAN">Bimbul</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-2 mt-5">
+                <p class="font-medium">Pilih Wasit Cadangan</p>
+                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                    <option value="GBK">Bimbul</option>
+                    <option value="BATAKAN">Johnson</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="mt-20" style="width: 100%;">
+            <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                <th style="border-radius: 50px 0px 0px 0px;"><p>Tim 1</p></td>
+                <th style="border-radius: 0px 50px 0px 0px;">Tim 2</td>
+            </tr>
+            <tr class="border-line">
+                <td>
+                    <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                    <option value="TIM A">TIM A</option>
+                    <option value="TIM B">TIM B</option>
+                </select></td>
+                <td style="text-align: center;">
+                    <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        <option value="TIM A">TIM A</option>
+                        <option value="TIM B">TIM B</option>
+                </td>
+            </tr>
+            </tr>
+            <tr  style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="4" style="border-radius: 0px 0px 50px 50px;" ><a><button style="width: 100%;">Submit</button></a></th></tr>
+        </table>
+    </div>
+
+
+</body>
+
+{% endblock content %}

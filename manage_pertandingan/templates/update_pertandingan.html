@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+    
+<style>
+   .head-text-table td{
+    text-align: center;
+   }
+   .head-text-table{
+    border-radius: 10px;
+   }
+
+   .bottom-line {
+    border-bottom: 1px solid #5C2AEA;
+   }
+   .btn{
+    padding: 0.5rem 2rem;
+   }
+   .update-btn{
+    background-color: #5C2AEA;
+    color: white;
+   }
+
+   .see-btn{
+    background-color: #5C2AEA;
+    color: white;
+   }
+
+   .add-btn{
+    background-color: #5C2AEA;
+    color: white;
+   }
+
+   .delete-btn{
+    background-color: white;
+    border:1px solid #5C2AEA;
+   }
+
+   table {
+    border-collapse: collapse;
+    border-radius: 10px;
+   }
+   td{
+    padding: 1rem 2rem;
+    border-bottom: #5C2AEA;
+   }
+
+   th{
+    padding: 1em;
+   }
+
+
+ 
+</style>
+
+<body class="bg-gray-100">
+	<div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Manage</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+
+    <div>
+        <p class="text-center text-xl font-bold">
+            List Pertandingan Grup Stage
+        </p>
+
+        <div class="mt-10"> 
+            <table class="mx-auto" style="max-width: 70vw; min-width: 50vw;" >
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th style="border-radius: 30px 0px 0px 0px;"><p>Grup</p></td>
+                    <th>Tim</td>
+                    <th>Waktu</td>
+                    <th>Pemenang</td>
+                    <th style="border-radius: 0px 30px 0px 0px">Action</td>
+                </tr>
+                <tr class="border-line bottom-line" >
+                    <td rowspan="2"><p>A</p></td>
+                    <td><p>A VS B</p></td>
+                    <td><p>28 April 2023</p></td>
+                    <td><p>A</p></td>
+                    <td class="inline-block">
+                        <button class="btn rounded-full see-btn">Update</button>
+                       
+                    </td>
+                </tr>
+                <tr class="border-line bottom-line">
+                    <td><p>A VS B</p></td>
+                    <td><p>28 April 2023</p></td>
+                    <td><p>-</p></td>
+                    <td class="inline-block">
+                        <button class="btn rounded-full see-btn">Update</button>
+                    </td>
+
+                </tr>
+                <tr class="border-line bottom-line" >
+                    <td rowspan="2"><p>B</p></td>
+                    <td><p>A VS B</p></td>
+                    <td><p>28 April 2023</p></td>
+                    <td><p></p></td>
+                    <td class="inline-block">
+                        <button class="btn rounded-full see-btn">Update</button>
+                       
+                    </td>
+                </tr>
+                <tr class="border-line bottom-line" >
+                    <td rowspan="2"><p>B</p></td>
+                    <td><p>D VS C</p></td>
+                    <td><p>-</p></td>
+                    <td class="inline-block">
+                        <button class="btn rounded-full see-btn">Update</button>
+                       
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="5" style="border-radius: 0px 0px 30px 30px;" ><a><button style="width: 100%;">Save</button></a></th></tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

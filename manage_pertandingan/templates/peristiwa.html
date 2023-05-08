@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Pembuatan</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+
+    <div>
+        <p>
+            Peristiwa Tim
+        </p>
+
+        <div>
+            <table style="width: 50vh; ">
+                <tr style="background-color: #5C2AEA; color: white;">
+                    <td style="padding: 10px;">Grup</td>
+                    <td>Tim</td>
+                    <td>Waktu</td>
+                    <td>Pemennag</td>
+                    <td>Action</td>
+                </tr>
+                <tr>
+                    
+                </tr>
+                <tr style="background-color: #5C2AEA; color: white;"><td>Finish</td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

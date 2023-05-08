@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+    
+<style>
+   .head-text-table td{
+    text-align: center;
+   }
+   .head-text-table{
+    border-radius: 10px;
+   }
+
+   .bottom-line {
+    border-bottom: 1px solid #5C2AEA;
+   }
+   .btn{
+    padding: 0.5rem 2rem;
+   }
+   .update-btn{
+    background-color: #5C2AEA;
+    color: white;
+   }
+
+   .add-btn{
+    background-color: #5C2AEA;
+    color: white;
+   }
+
+   .delete-btn{
+    background-color: white;
+    border:1px solid #5C2AEA;
+   }
+
+   table {
+    border-collapse: collapse;
+    border-radius: 10px;
+   }
+   td{
+    padding: 1rem 2rem;
+    border-bottom: #5C2AEA;
+   }
+
+   th{
+    padding: 1em;
+   }
+
+
+ 
+</style>
+
+<body class="bg-gray-100">
+	<div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Pembuatan</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+    <!-- <div>
+        <div style="text-align: center; font-size: 20px; ">
+            <p style="font-weight:600;">Pertandingan belum lengkap!</p>
+            <p style="font-weight:300;">Klik tombol next untuk membuat pertandingan</p>
+        </div>
+        <a><button class="btn" style="padding: 10px; border-color: #5C2AEA;">Next</button></a>
+    </div> -->
+
+
+    <div>
+        <p class="text-center text-xl font-bold">
+            List Pertandingan
+        </p>
+
+        <div class="mt-10"> 
+            <table class="mx-auto" style="max-width: 70vw; min-width: 50vw;">
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th style="border-radius: 50px 0px 0px 0px;"><p>Grup A</p></td>
+                    <th>Action</td>
+                    <th>Grup B</td>
+                    <th style="border-radius: 0px 50px 0px 0px">Action</td>
+                </tr>
+                <tr class="border-line">
+                    <td>A VS B</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn rounded-full update-btn">update</button>
+                            <button class="btn rounded-full delete-btn">delete</button>
+                        </div>
+                    </td>
+                    <td>K VS L</td>
+                    <td>
+                        <div>
+                            <button class="btn rounded-full update-btn">update</button>
+                            <button class="btn rounded-full delete-btn">delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="border-line">
+                    <td>A VS B</td>
+                    <td>
+                        <div>
+                            <button class="btn rounded-full update-btn">update</button>
+                            <button class="btn rounded-full delete-btn">delete</button>
+                        </div>
+                    </td>
+                    <td>E VS G</td>
+                    <td>
+                        <div>
+                            <button class="btn rounded-full update-btn">update</button>
+                            <button class="btn rounded-full delete-btn">delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <tr class="border-line">
+                        <td>A VS B</td>
+                        <td>
+                            <div>
+                                <button class="btn rounded-full update-btn">update</button>
+                                <button class="btn rounded-full delete-btn">delete</button>
+                            </div>
+                        </td>
+                        <td>C VS D</td>
+                        <td>
+                            <div>
+                                <button class="btn rounded-full update-btn">update</button>
+                                <button class="btn rounded-full delete-btn">delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                
+                <!-- Break -->
+                <tr style="background-color: #5C2AEA; color: white;">
+                    <td>Grup C</td>
+                    <td>Action</td>
+                    <td>Grup D</td>
+                    <td>Action</td>
+                </tr>
+                <tr>
+                    <td>? VS ?</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn rounded-full add-btn">add</button>
+                        </div>
+                    </td>
+                    <td>? VS ?</td>
+                    <td>
+                        <div>
+                            <button class="btn rounded-full add-btn">add</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}
