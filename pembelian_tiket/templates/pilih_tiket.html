@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% include 'navbar_penonton.html' %}
 
 <head>
     <meta charset="UTF-8">
     <title>Pembelian Tiket Sepakbola</title>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+    <style>
+      table {width:80%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
+      tr {border-collapse: collapse; margin: 25px 0;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin-left:auto;margin-right:auto;} 
+      th,td {background-color: #f3f3f3; width:100px; text-align: center; height: 80px;}
+  </style>
   </head>
   
-  <body class="bg-gray-100">
+  <body style="background-color: #f3f3f3;">
     <div class="container mx-auto my-8">
       <h1 class="text-3xl flex justify-center font-bold mb-4">Pembelian Tiket Sepakbola</h1>
       

@@ -1,29 +1,34 @@
-
 {% load static %}
+{% include 'navbar_penonton.html' %}
 
 <!DOCTYPE html>
 <html>
     {% block meta %}
-    <head>
-        <title>Beli Tiket</title>
+    <head >
+        <title>List Pertandingan</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+        <style>
+            table {width:50%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
+            tr {border-collapse: collapse; margin: 25px 0;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin-left:auto;margin-right:auto;} 
+            th,td {background-color: #f3f3f3; width:100px; height: 40px; text-align: center;}
+        </style>
     </head>
     {% endblock meta %}
 
-    <body>
+    <body style="background-color: #f3f3f3;"> 
         {% block content %}
 
         <div class="page-title" style="text-align: center;">
-            <h1>Beli Tiket</h1>
+            <h1>List Pertandingan</h1>
         </div>
         <div class="wrapper">
             <div class="box">
                 <div>
-                    <table style="width: 67%; text-align: center; border-collapse: collapse; margin-left:auto;margin-right:auto;" border="1">
+                    <table>
                       <tr style="color: #55509c;">
                               <th>Tim 1</th>
                               <th>Tim 2</th>

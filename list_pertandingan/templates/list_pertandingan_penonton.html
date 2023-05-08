@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-{% include 'navbar_manager.html' %}
+{% include 'navbar_penonton.html' %}
 
 
 <head>
     <meta charset="UTF-8">
-    <title>History Rapat</title>
+    <title>List Pertandingan</title>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
     <style>
         table {width:80%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
@@ -15,37 +15,27 @@
   </head>
 
   <body class="bg-gray-100">
-
         <div class="wrapper">
             <div class="box">
-                <div class="history-rapat" style="margin: 40px 30px;">
-                    <h1 class="text-3xl flex justify-center font-bold mb-4">History Rapat</h1>
+                <div class="list-pertandingan" style="margin: 40px 30px;">
+                    <h1 class="text-3xl flex justify-center font-bold mb-4">List Pertandingan</h1>
                 </div>
                 <div>
                     <table>
-                      <tr style="color: #55509c;padding: 12px 15px; border-bottom: 1px solid #dddddd; font-size: large;">
-                              <th>Rapat Tim</th>
-                              <th>Nama Panitia</th>
+                        <tr style="color: #55509c;padding: 12px 15px; border-bottom: 1px solid #dddddd; font-size: large;">
+                              <th>Tim Bertanding</th>
                               <th>Stadium</th>
                               <th>Tanggal dan Waktu</th>
-                              <th>Action</th>
                       </tr>                      
-                        <tr style="font-size: medium;">
+                      <tr style="font-size: medium;">
                             <td>A vs B</td>
-                            <td>XYZ</td>
                             <td>Stadium GBK</td>
                             <td>5 Juli 2023, 07.00 - 09.00</td>
-                            <td style="color:#026bff9e"><a href="">Lihat Laporan Rapat</a></td>
-                            
-
                         </tr>
                         <tr style="font-size: medium;">
                             <td>C vs D</td>
-                            <td>XYZ</td>
                             <td>Stadium GBK</td>
                             <td>7 Juli 2023, 13.00 - 15.00</td>
-                            <td style="color:#026bff9e"><a href="">Lihat Laporan Rapat</a></td>
-
                         </tr>
                        
                     </tr>
@@ -56,5 +46,5 @@
             </div>
         </div>
     </body>
-
-    {% endblock content %}
+</html>
+{% endblock content %}
