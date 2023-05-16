@@ -13,27 +13,25 @@
 	<div class="container mx-auto my-8">
 		<h1 class="flex justify-center text-3xl font-bold mb-4">List Pemesanan</h1>
         
-        <div class="mt-8 flex justify-center">
-            <table class="table-auto border border-gray-300">
+        <div class="mt-8 flex justify-center container">
+            <table class="w-auto border-collapse border border-gray-300">
                 <thead>
-                    <tr class="bg-gray-700 text-gray-200">
-                        <th class="py-2 px-4 border">Stadium</th>
-                        <th class="py-2 px-4 border">Waktu</th>
-                    </tr>
+                  <tr>
+                    <th class="py-2 px-4 bg-blue-200 border">Stadium</th>
+                    <th class="py-2 px-4 bg-blue-200 border">Waktu</th>
+                  </tr>
                 </thead>
-
-
                 <tbody>
-                    <tr class="bg-gray-200 border border-black border-2">
-                        <td class="py-2 px-4 border">Stadion Batakan</td>
-                        <td class="py-2 px-4 border">01/05/2023 8:34:12</td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr class="bg-gray-200 border border-black border-2">
-                        <td class="py-2 px-4 border">Stadion Gelora Bungkarno</td>
-                        <td class="py-2 px-4 border">01/06/2023 7:31:12</td>
-                    </tr>
+                    {% for pemesanan in pemesanan_list %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <tr class="border bg-gray-200">
+                        {% else %}
+                        <tr class="border bg-gray-300">
+                        {% endif %}
+                            <td class="py-2 px-4 border-b">{{ pemesanan.nama }}</td>
+                            <td class="py-2 px-4 border-b">{{ pemesanan.start_datetime }} - {{ pemesanan.end_datetime }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
