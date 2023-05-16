@@ -30,6 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+APP_NAME = 'u-league'
+CSRF_TRUSTED_ORIGINS = [f'https://{APP_NAME}.up.railway.app']
+
 # Application definition
 
 INSTALLED_APPS = [
