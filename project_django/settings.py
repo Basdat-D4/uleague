@@ -30,6 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+APP_NAME = 'u-league'
+CSRF_TRUSTED_ORIGINS = [f'https://{APP_NAME}.up.railway.app']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example_app',
     'rapat',
-    'authentication'
+    'authentication',
+    'mengelola_tim',
+    'peminjaman_stadium',
 ]
 
 MIDDLEWARE = [
@@ -81,15 +86,22 @@ WSGI_APPLICATION = 'project_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'hPw7JKJmGRXDSB300lqm',
+        'HOST': 'containers-us-west-11.railway.app',
+        'PORT': '8066',
+        'CONN_MAX_AGE': 600,
     }
 }
 
 if PRODUCTION:
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=600, ssl_require=True
-    )
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway'
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
