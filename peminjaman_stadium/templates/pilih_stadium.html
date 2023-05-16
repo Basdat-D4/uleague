@@ -18,20 +18,12 @@
 
         <div class="flex flex-wrap mb-6;">
           <label class="w-full mb-2" for="form">Stadium :   </label>
-          <select id="dropdown">
-            <option value="option1">Stadion Internasional Jakarta</option>
-            <option value="option2">Stadion Utama Gelora Bung Karno</option>
-            <option value="option3">Stadion Gelora Bung Tomo</option>
-            <option value="option3">Stadion Batakan</option>
-            <option value="option3">Stadion Sultan Agung</option>
-            <option value="option3">Stadion Mandala</option>
-            <option value="option3">Stadion Si Jalak Harumpat</option>
-            <option value="option3">Stadion Manahan</option>
-            <option value="option3">Stadion Wibawa Mukti</option>
-            <option value="option3">Stadion Kaharudin Nasution Rumbai</option>
-            <option value="option3">Stadion Gajayana</option>
-            <option value="option3">Stadion Internasional Banten</option>
-          </select>        
+          
+          <select name="stadium">
+          {% for name in stadium_names %}
+            <option value="{{ name }}">{{ name }}</option>
+          {% endfor %}
+          </select>
         </div>
 
         <div class="flex flex-wrap mb-6;">
