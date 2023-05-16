@@ -20,7 +20,6 @@ def login_user(request):
         username = request.POST['username']
         password = request.POST['password']
         with connection.cursor() as cursor:
-            cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
             cursor.execute(f'''
                 SELECT *
                 FROM USER_SYSTEM
@@ -34,7 +33,8 @@ def login_user(request):
             response.status_code = 200
             return response
         else:
-            response.status_code = 403
+            response.status_code = 404
+            print("login failed")
             response.delete_cookie('username')
             response.delete_cookie('password')
             return response
@@ -69,7 +69,6 @@ def register_panitia(request):
         if (id_panitia != "" and jabatan != "" and username != "" and password != ""):
             with connection.cursor() as cursor:
                 try:
-                    cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
                     cursor.execute(f'''
                         INSERT INTO USER_SYSTEM VALUES ('{username}', '{password}');
                         INSERT INTO NON_PEMAIN VALUES ('{id_panitia}', '{nama_depan}', '{nama_belakang}', '{nomor_hp}', '{email}', '{alamat}');
@@ -107,7 +106,6 @@ def register_manajer(request):
         if (id_manajer != "" and username != "" and password != ""):
             with connection.cursor() as cursor:
                 try:
-                    cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
                     cursor.execute(f'''
                         INSERT INTO USER_SYSTEM VALUES ('{username}', '{password}');
                         INSERT INTO NON_PEMAIN VALUES ('{id_manajer}', '{nama_depan}', '{nama_belakang}', '{nomor_hp}', '{email}', '{alamat}');
@@ -145,7 +143,6 @@ def register_penonton(request):
         if (id_penonton != "" and username != "" and password != ""):
             with connection.cursor() as cursor:
                 try:
-                    cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
                     cursor.execute(f'''
                         INSERT INTO USER_SYSTEM VALUES ('{username}', '{password}');
                         INSERT INTO NON_PEMAIN VALUES ('{id_penonton}', '{nama_depan}', '{nama_belakang}', '{nomor_hp}', '{email}', '{alamat}');
