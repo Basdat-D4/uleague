@@ -14,10 +14,11 @@
     <div class="container mx-auto my-8">
       <h1 class="text-3xl flex justify-center font-bold mb-4">Rapat Pertandingan {{nama_tim}}</h1>
       
-      <form class="mx-auto w-full max-w-lg" action="/submit-rapat" method="post">
+      <form class="mx-auto w-full max-w-lg" action="{% url 'rapat:create_rapat' pertandingan %}" method="post">
+        {% csrf_token %}
         <div class="flex flex-wrap mt-16 mb-16">
           <label class="w-full mb-2" for="isi-rapat">Isi Rapat:</label>
-          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="isi-rapat" name="isi_rapat" rows="5" cols="40" required></textarea>
+          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="isi_rapat" name="isi_rapat" rows="5" cols="40" required></textarea>
         </div>
 
         <div class="flex items-center justify-center">

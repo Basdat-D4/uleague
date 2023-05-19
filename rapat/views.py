@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import datetime
 from django.db import connection
+import uuid
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def show_pilih_pertandingan(request):
@@ -19,21 +21,70 @@ def show_pilih_pertandingan(request):
             tp1.Nama_Tim < tp2.Nama_Tim;
     ''') # '<' to ensure theres only 1 row for each match
     pertandingan = cursor.fetchall()
+    cursor.close()
     # print(pertandingan)
 
+    cursor = connection.cursor()
+    cursor.execute(f'''
+        SELECT
+            p.ID_Pertandingan,
+            tma.ID_Manajer AS id_manajer_tim_a,
+            tmb.ID_Manajer AS id_manajer_tim_b
+        FROM
+            PERTANDINGAN p
+        JOIN TIM_PERTANDINGAN tpa ON p.ID_Pertandingan = tpa.ID_Pertandingan
+        JOIN TIM_MANAJER tma ON tpa.Nama_Tim = tma.Nama_Tim
+        JOIN TIM_PERTANDINGAN tpb ON p.ID_Pertandingan = tpb.ID_Pertandingan
+        JOIN TIM_MANAJER tmb ON tpb.Nama_Tim = tmb.Nama_Tim
+        WHERE
+            tma.ID_Manajer > tmb.ID_Manajer;
+    ''')
+    rapat_util = cursor.fetchall()
+    cursor.close()
+    # print(rapat_util)
+
     pertandingan_list = []
-    for p in pertandingan:
+    for i in range(len(pertandingan)):
         pertandingan_list.append({
-            "tim_bertanding": p[0],
-            "stadium": p[1],
-            "tanggal_dan_waktu": p[2]
+            "tim_bertanding": pertandingan[i][0],
+            "stadium": pertandingan[i][1],
+            "tanggal_dan_waktu": pertandingan[i][2],
+
+
+            "id_pertandingan": str(rapat_util[i][0]),
+            "id_manajer_tim_a": str(rapat_util[i][1]),
+            "id_manajer_tim_b": str(rapat_util[i][2])
         })
 
     context = {'pertandingan_list': pertandingan_list}
     return render(request, "pilih_pertandingan.html", context)
 
-def rapat_pertandingan(request, nama_tim):
+def rapat_pertandingan(request, pertandingan):
     # nama_tim = pertandingan.split(" vs ")
-    context = {'nama_tim': nama_tim}
-    # print(nama_tim)
+
+    # convert string to dict
+    dict_pertandingan = eval(pertandingan)
+    context = {
+        'nama_tim': dict_pertandingan['tim_bertanding'],
+        'pertandingan': pertandingan
+        }
+    print(pertandingan)
+    cursor = connection.cursor()
+    cursor.execute(f'''
+        SELECT 
+    ''')
     return render(request, "rapat_pertandingan.html", context)
+
+def create_rapat(request, pertandingan):
+    isi_rapat = request.POST.get('isi_rapat')
+
+    # convert string to dict
+    dict_data = eval(pertandingan)
+
+    cursor = connection.cursor()
+    cursor.execute(f'''
+        INSERT INTO RAPAT (id_pertandingan, datetime, perwakilan_panitia, manajer_tim_a, manajer_tim_b, isi_rapat)
+        VALUES ('{dict_data['id_pertandingan']}', '023-04-29 20:00:00', 'f080b276-3ea6-46f1-bcf3-f14eaa8b485a', '{dict_data['id_manajer_tim_a']}', '{dict_data['id_manajer_tim_b']}', '{isi_rapat}')
+    ''')
+
+    return HttpResponseRedirect('/dashboard/')
