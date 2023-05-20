@@ -47,7 +47,7 @@ def logout_user(request):
     response.delete_cookie('username')
     response.delete_cookie('password')
     print("logout")
-    return HttpResponseRedirect("/")
+    return HttpResponseRedirect("/login/")
 
 # Register
 def register_user(request):
@@ -166,4 +166,30 @@ def register_penonton(request):
     return render(request, 'reg_penonton.html', {})
 
 def show_dashboard(request):
-    return render(request, 'dashboard_panitia.html')
+    username = request.COOKIES['username']
+
+    role = get_user_role(username)
+    print("role: " + role)
+    context = {
+        'user': {
+            'role': f'{role}',
+        }
+    }
+
+    with connection.cursor() as cursor:
+        if role == 'Panitia':
+            cursor.execute(f'''
+                SELECT * FROM PANITIA WHERE username='{username}';
+            ''')
+            data = dict_fetch_all(cursor)
+            context['data'] = data[0]
+            print(data[0])
+            return render(request, 'dashboard_panitia.html', context)
+        elif role == 'Manajer':
+            # TODO
+            pass
+        elif role == 'Penonton':
+            # TODO
+            pass
+
+    return render(request, 'dashboard_panitia.html', context)
