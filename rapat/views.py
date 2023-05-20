@@ -82,9 +82,17 @@ def create_rapat(request, pertandingan):
     dict_data = eval(pertandingan)
 
     cursor = connection.cursor()
+    username = request.COOKIES['username']
     cursor.execute(f'''
-        INSERT INTO RAPAT (id_pertandingan, datetime, perwakilan_panitia, manajer_tim_a, manajer_tim_b, isi_rapat)
-        VALUES ('{dict_data['id_pertandingan']}', '023-04-29 20:00:00', 'f080b276-3ea6-46f1-bcf3-f14eaa8b485a', '{dict_data['id_manajer_tim_a']}', '{dict_data['id_manajer_tim_b']}', '{isi_rapat}')
+        SELECT id_panitia
+        FROM panitia
+        WHERE username = '{username}'
+    ''')
+    id_panitia = cursor.fetchone()[0]
+
+    cursor.execute(f'''
+        INSERT INTO RAPAT (id_pertandingan, perwakilan_panitia, manajer_tim_a, manajer_tim_b, isi_rapat)
+        VALUES ('{dict_data['id_pertandingan']}', '{id_panitia}', '{dict_data['id_manajer_tim_a']}', '{dict_data['id_manajer_tim_b']}', '{isi_rapat}')
     ''')
 
     return HttpResponseRedirect('/dashboard/')
