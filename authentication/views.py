@@ -186,8 +186,13 @@ def show_dashboard(request):
             print(data[0])
             return render(request, 'dashboard_panitia.html', context)
         elif role == 'Manajer':
-            # TODO
-            pass
+            cursor.execute(f'''
+                SELECT * FROM MANAJER WHERE username='{username}';
+            ''')
+            data = dict_fetch_all(cursor)
+            context['data'] = data[0]
+            print(data[0])
+            return render(request, 'dashboard_manajer.html', context)
         elif role == 'Penonton':
             # TODO
             pass
