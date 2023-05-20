@@ -3,7 +3,7 @@ from utils.db_utils import dict_fetch_all
 
 def get_user_role(username):
     with connection.cursor() as cursor:
-        cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
+        # cursor.execute('SET SEARCH_PATH TO ULEAGUE;')
 
         # Check Panitia
         cursor.execute(f'''
