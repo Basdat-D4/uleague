@@ -14,20 +14,12 @@ def show_list_pemesanan(request):
     pemesanan = cursor.fetchall()
     # print(pemesanan)
 
-    # convert the data into a list of dictionaries
     pemesanan_list = []
     for stadium in pemesanan:
-
-        # change format of datetime
-        start_datetime = stadium[1]
-        end_datetime = stadium[2]
-        formatted_start_datetime = start_datetime.strftime('%d/%m/%Y')
-        formatted_end_datetime = end_datetime.strftime('%d/%m/%Y')
-
         pemesanan_list.append({
             'nama': stadium[0],
-            'start_datetime': formatted_start_datetime,
-            'end_datetime': formatted_end_datetime,
+            'start_datetime': stadium[1],
+            'end_datetime': stadium[2],
         })
 
     connection.close()
@@ -36,24 +28,45 @@ def show_list_pemesanan(request):
     return render(request, "list_pemesanan.html", context)
 
 def show_pilih_stadium(request):
-    # response = HttpResponse()
-
     cursor = connection.cursor()
     cursor.execute(f'''
-        SELECT NAMA
+        SELECT NAMA, id_stadium
         FROM STADIUM
     ''')
-    stadium_list = cursor.fetchall()
+    stadium = cursor.fetchall()
+    # print(stadium)
     # response.write(stadium_list)
     connection.close()
 
-    names_list = []
-    for stadium in stadium_list:
-        names_list.append(stadium[0])
+    stadium_list = []
+    for item in stadium:
+        stadium_list.append({
+            'nama': item[0],
+            'id_stadium': item[1],
+        })
 
-    context = {'stadium_names': names_list}
-    print(context)
+    # print(stadium_list)
+
+    context = {'stadium_list': stadium_list}
+    # print(context)
     return render(request, "pilih_stadium.html", context)
 
 def show_list_waktu(request):
-    return render(request, "list_waktu.html")
+    date = request.POST.get('date')
+    id_stadium = request.POST.get('id_stadium')
+    print(date)
+    print(id_stadium)
+
+    cursor = connection.cursor()
+    cursor.execute(f'''
+        SELECT nama
+        FROM stadium
+        WHERE id_stadium = '{id_stadium}'
+    ''')
+    nama_stadium = cursor.fetchmany(1)[0][0]
+
+    context = {
+        'nama_stadium': nama_stadium
+    }
+
+    return render(request, "list_waktu.html", context)
