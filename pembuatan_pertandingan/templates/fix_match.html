@@ -70,57 +70,65 @@
     </p>
     
     <div class="mx-auto mt-10" style="max-width: 50vw; min-width: 50vw;"> 
-        <div class="">
-            <div class="grid grid-cols-2 mt-5">
-                <p class="font-medium">Pilih Wasit Utama</p>
-                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                    <option value="GBK">Johson</option>
-                    <option value="BATAKAN">Bimbul</option>
-                </select>
+        <form>
+            <div class="">
+                <div class="grid grid-cols-2 mt-5">
+                    <p class="font-medium">Pilih Wasit Utama</p>
+                    <select name="wasit-utama" id="wasit" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        {% for id, name in daftar_wasit %}
+                            <option value="{{id}}">{{name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 mt-5">
+                    <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
+                    <select name="wasit-pembantu-1" id="wasit" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        {% for id, name in daftar_wasit %}
+                        <option value="{{id}}">{{name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 mt-5">
+                    <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
+                    <select name="wasit-pembantu-2" id="wasit" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        {% for id, name in daftar_wasit %}
+                            <option value="{{id}}">{{name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 mt-5">
+                    <p class="font-medium">Pilih Wasit Cadangan</p>
+                    <select name="wasit-cadangan" id="wasit" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        {% for id, name in daftar_wasit %}
+                            <option value="{{id}}">{{name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-            <div class="grid grid-cols-2 mt-5">
-                <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
-                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                    <option value="GBK">Johnson</option>
-                    <option value="BATAKAN">Batakan</option>
-                </select>
-            </div>
-            <div class="grid grid-cols-2 mt-5">
-                <p class="font-medium">Pilih Wasit Pembantu/Hakim Garis</p>
-                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                    <option value="GBK">Johson</option>
-                    <option value="BATAKAN">Bimbul</option>
-                </select>
-            </div>
-            <div class="grid grid-cols-2 mt-5">
-                <p class="font-medium">Pilih Wasit Cadangan</p>
-                <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                    <option value="GBK">Bimbul</option>
-                    <option value="BATAKAN">Johnson</option>
-                </select>
-            </div>
-        </div>
-
-        <table class="mt-20" style="width: 100%;">
-            <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
-                <th style="border-radius: 50px 0px 0px 0px;"><p>Tim 1</p></td>
-                <th style="border-radius: 0px 50px 0px 0px;">Tim 2</td>
-            </tr>
-            <tr class="border-line">
-                <td>
-                    <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                    <option value="TIM A">TIM A</option>
-                    <option value="TIM B">TIM B</option>
-                </select></td>
-                <td style="text-align: center;">
-                    <select name="cars" id="cars" style="width: 100%; border-radius: 20px; padding: 0.5em;">
-                        <option value="TIM A">TIM A</option>
-                        <option value="TIM B">TIM B</option>
-                </td>
-            </tr>
-            </tr>
-            <tr  style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="4" style="border-radius: 0px 0px 50px 50px;" ><a><button style="width: 100%;">Submit</button></a></th></tr>
-        </table>
+    
+            <table class="mt-20" style="width: 100%;">
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th style="border-radius: 50px 0px 0px 0px;"><p>Tim 1</p></td>
+                    <th style="border-radius: 0px 50px 0px 0px;">Tim 2</td>
+                </tr>
+                <tr class="border-line">
+                    <td>
+                        <select name="tim-1" id="tim1" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                        {% for name in daftar_tim %}
+                            <option value="{{name}}">{{name}}</option>
+                        {% endfor %}
+                    </select></td>
+                    <td style="text-align: center;">
+                        <select name="tim-2" id="tim2" style="width: 100%; border-radius: 20px; padding: 0.5em;">
+                            {% for name in daftar_tim %}
+                            <option value="{{name}}">{{name}}</option>
+                            {% endfor %}
+                    </td>
+                    </tr>
+                </tr>
+                <tr  style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="4" style="border-radius: 0px 0px 50px 50px;" ><a><button style="width: 100%;">Submit</button></a></th></tr>
+            </table>
+        </form>
     </div>
 
 

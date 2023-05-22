@@ -23,6 +23,6 @@ urlpatterns = [
     path('', include('authentication.urls')),
     path('mengelola_tim/', include('mengelola_tim.urls')),
     path('peminjaman_stadium/', include('peminjaman_stadium.urls')),
-    path('pembuatan-pertandingan/', include('pembuatan_pertandingan.urls')),
+    path('pembuatan-pertandingan/', include(('pembuatan_pertandingan.urls', 'permbuatan_pertandingan'), namespace='pembuatan_pertandingan')),
     path('manage-pertandingan/', include('manage_pertandingan.urls')),
 ]

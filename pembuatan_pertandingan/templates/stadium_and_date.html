@@ -17,36 +17,36 @@
         </div>
     <hr style="margin-top: 40px; color: #5C2AEA;">
     </div>
-    <!-- <div>
-        <div style="text-align: center; font-size: 20px; ">
-            <p style="font-weight:600;">Pertandingan belum lengkap!</p>
-            <p style="font-weight:300;">Klik tombol next untuk membuat pertandingan</p>
-        </div>
-        <a><button class="btn" style="padding: 10px; border-color: #5C2AEA;">Next</button></a>
-    </div> -->
-
-
     <div style="min-width: 50vw; " >
         <div>
-
             <p class="text-xl font-bold	text-center	">
                 Pembuatan Pertandingan
             </p>
         </div>
-        <div style="padding: 2rem; width: 50vh; margin: auto; border-radius: 30px; background-color: white; margin-top: 20px; font-size: 15px; font-weight: 500;" >
-            <div class=" grid grid-cols-2">
-                <p>Stadium</p>
-                <select name="cars" id="cars" style="width: 100%;">
-                    <option value="GBK">GBK</option>
-                    <option value="BATAKAN">Batakan</option>
-                </select>
+
+           <form id="form" action="" method="POST">
+            <div style="padding: 2rem; width: 50vh; margin: auto; border-radius: 30px; background-color: white; margin-top: 20px; font-size: 15px; font-weight: 500;" >
+
+            {% csrf_token %}
+                <div class=" grid grid-cols-2">
+                    <p>Stadium</p>
+                    <select name="stadium" 
+                     id="stadium" style="width: 100%;">
+                        {% for DATA in daftar_stadium %}
+                        <option value="{{DATA}}">{{DATA}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-20 grid grid-cols-2">
+                    <p>Tanggal Mulai</p>
+                    <input type="datetime-local" id="tanggal" name="tanggal" style="width: 100%;">
+                </div>
             </div>
-            <div class="mt-20 grid grid-cols-2">
-                <p>Tanggal</p>
-                <input type="date" id="tanggal" name="tanggal" style="width: 100%;">
-            </div>
-        </div>
-        <a><button class="rounded-full" style="background-color: #5C2AEA; color: white; padding: 0.5rem 4rem; display: block; margin: auto; margin-top: 20px;">Next</button></a>
+            <input class="rounded-full" type="submit" value="Next" style="background-color: #5C2AEA; color: white; padding: 0.5rem 4rem; display: block; margin: auto; margin-top: 20px;">
+           </form>
+
+        <!-- <a><button id="submit-jadwal" value="submit" type="submit" class="" >Next</button></a> -->
 </body>
+
 
 {% endblock content %}
