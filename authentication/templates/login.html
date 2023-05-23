@@ -27,12 +27,12 @@
   background-color: rgba(255, 255, 255, 1);
 }
 .login-page-text {
-  top: 213px;
-  left: 730px;
+  top: 190px;
+  left: 628px;
   color: rgba(0, 0, 0, 1);
   height: auto;
   position: absolute;
-  font-size: 40px;
+  font-size: 50px;
   font-style: SemiBold;
   text-align: left;
   font-family: Poppins;
@@ -43,12 +43,12 @@
   text-align: center;
 }
 .login-page-text02 {
-  top: 280px;
-  left: 735px;
+  top: 250px;
+  left: 635px;
   color: rgba(0, 0, 0, 1);
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
   font-style: Regular;
   text-align: left;
   font-family: Poppins;
@@ -60,7 +60,8 @@
 }
 
 form {
-  width: 400px;
+  height: auto;
+  width: 600px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -75,6 +76,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 25px;
 }
 
 input[type="text"],
@@ -84,6 +86,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
+  font-size: 25px;
 }
 
 input[type="submit"] {
@@ -110,6 +113,61 @@ input[type="submit"]:hover {
 	text-decoration: none;
 }
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function validateForm() {
+        var username = document.forms["myForm"]["username"].value;
+        var password = document.forms["myForm"]["password"].value;
+        if (username == "") {
+            alert("Username must be filled out");
+            return false;
+        }
+        if (password == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+    }
+
+    function showError(message) {
+      $("#errorMessage").html(message);
+      const alertBox = `<div class="alert alert-danger" role="alert">${message}</div>`;
+      $("#errorMessage").append(alertBox);
+    }
+
+    $(document).ready(function() {
+      $("#idSubmit").submit(function(e) {
+        e.preventDefault();
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        if (username == "" || password == "") {
+          showError("Please fill out all fields");
+        } else {
+          $.ajax({
+            method: "POST",
+            url: "{% url 'authentication:login_user' %}",
+            headers: {
+              'X-CSRFToken': "{{ csrf_token }}"
+            },
+            data: {
+              username: username,
+              password: password
+            },
+            success: function(data) {
+              window.location.href = "{% url 'authentication:show_dashboard' %}";
+            },
+            error: function(data) {
+              showError("Email atau password salah!");
+            }
+          });
+        }
+      });
+    });
+
+</script>
+
+
 <body>
     <div>
         <div class="login-page-container">
@@ -117,13 +175,13 @@ input[type="submit"]:hover {
             <span class="login-page-text"><span>Welcome Back!</span></span>
             <span class="login-page-text02"><span>User U-League B04</span></span>
 
-            <form>
+            <form id="idSubmit">
                 
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" class="form-control" id="username" name="username" required>
                 <br>
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" required>
                 <br>
                 <input type="submit" value="Login">
                 <div class="register-link">

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div class="container mx-auto my-8">
+		<h1 class="flex justify-center text-3xl font-bold mb-4">List Pemesanan</h1>
+        
+        <div class="mt-8 flex justify-center container">
+            <table class="w-auto border-collapse border border-gray-300">
+                <thead>
+                  <tr>
+                    <th class="py-2 px-4 bg-blue-200 border">Stadium</th>
+                    <th class="py-2 px-4 bg-blue-200 border">Waktu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for pemesanan in pemesanan_list %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <tr class="border bg-gray-200">
+                        {% else %}
+                        <tr class="border bg-gray-300">
+                        {% endif %}
+                            <td class="py-2 px-4 border-b">{{ pemesanan.nama }}</td>
+                            <td class="py-2 px-4 border-b">{{ pemesanan.start_datetime }} - {{ pemesanan.end_datetime }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-16 flex items-center justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit" onclick="location.href='/peminjaman_stadium/pilih_stadium'">Pesan</button>
+        </div>
+	</div>
+</body>
+
+{% endblock content %}
