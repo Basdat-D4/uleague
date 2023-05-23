@@ -44,12 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example_app',
     'rapat',
-
-    'pembelian_tiket',
-    'list_pertandingan',
-    'history_rapat',
-    'authentication'
-
     'authentication',
     'mengelola_tim',
     'peminjaman_stadium',
