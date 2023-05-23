@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar_penonton.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>List Pertandingan</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+    <style>
+        table {width:80%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
+        tr {border-collapse: collapse; margin: 25px 0;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin-left:auto;margin-right:auto;} 
+        th,td {background-color: #f3f3f3; width:100px; text-align: center; height: 80px;}
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+        <div class="wrapper">
+            <div class="box">
+                <div class="list-pertandingan" style="margin: 40px 30px;">
+                    <h1 class="text-3xl flex justify-center font-bold mb-4">List Pertandingan</h1>
+                </div>
+                <div>
+                    <table>
+                        <tr style="color: #55509c;padding: 12px 15px; border-bottom: 1px solid #dddddd; font-size: large;">
+                              <th>Tim Bertanding</th>
+                              <th>Stadium</th>
+                              <th>Tanggal dan Waktu</th>
+                      </tr>                      
+                      <tr style="font-size: medium;">
+                            <td>A vs B</td>
+                            <td>Stadium GBK</td>
+                            <td>5 Juli 2023, 07.00 - 09.00</td>
+                        </tr>
+                        <tr style="font-size: medium;">
+                            <td>C vs D</td>
+                            <td>Stadium GBK</td>
+                            <td>7 Juli 2023, 13.00 - 15.00</td>
+                        </tr>
+                       
+                    </tr>
+                    </table>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock content %}
