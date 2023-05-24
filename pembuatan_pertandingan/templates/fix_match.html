@@ -70,7 +70,8 @@
     </p>
     
     <div class="mx-auto mt-10" style="max-width: 50vw; min-width: 50vw;"> 
-        <form>
+        <form id="form" action="" method="POST">
+            {% csrf_token %}
             <div class="">
                 <div class="grid grid-cols-2 mt-5">
                     <p class="font-medium">Pilih Wasit Utama</p>
@@ -126,7 +127,9 @@
                     </td>
                     </tr>
                 </tr>
-                <tr  style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="4" style="border-radius: 0px 0px 50px 50px;" ><a><button style="width: 100%;">Submit</button></a></th></tr>
+                <tr  style="background-color: #5C2AEA; color: white; margin-top: 30px;"><th colspan="4" style="border-radius: 0px 0px 50px 50px;" >
+                    <input class="rounded-full" type="submit" value="Submit" style="background-color: #5C2AEA;">
+                </th></tr>
             </table>
         </form>
     </div>

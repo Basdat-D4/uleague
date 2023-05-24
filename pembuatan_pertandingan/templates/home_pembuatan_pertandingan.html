@@ -13,7 +13,7 @@
    .head-text-table td{
     text-align: center;
    }
-   .head-text-table{
+   .head-text-table {
     border-radius: 10px;
    }
 
@@ -21,6 +21,7 @@
     border-bottom: 1px solid #5C2AEA;
    }
    .btn{
+    margin-top: 3px;
     padding: 0.5rem 2rem;
    }
    .update-btn{
@@ -38,9 +39,9 @@
     border:1px solid #5C2AEA;
    }
 
-   table {
+   table{
     border-collapse: collapse;
-    border-radius: 10px;
+    border-radius: 10px 0px;
    }
    td{
     padding: 1rem 2rem;
@@ -77,88 +78,99 @@
             List Pertandingan
         </p>
 
-        <div class="mt-10"> 
-            <table class="mx-auto" style="max-width: 70vw; min-width: 50vw;">
-                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
-                    <th style="border-radius: 50px 0px 0px 0px;"><p>Grup A</p></td>
+        <div class="mt-10 mx-auto flex flex-wrap" style="max-width: 50vw; min-width: 25vw;">
+            <table class=" w-full col-span-1">
+                <tr class="head-text-table mt-10" style="background-color: #5C2AEA; color: white; max-height: fit-content;">
+                    <th><p>Grup A</p></td>
                     <th>Action</td>
-                    <th>Grup B</td>
-                    <th style="border-radius: 0px 50px 0px 0px">Action</td>
                 </tr>
-                <tr class="border-line">
-                    <td>A VS B</td>
-                    <td>
-                        <div class="btn-group">
-                            <button class="btn rounded-full update-btn">update</button>
-                            <button class="btn rounded-full delete-btn">delete</button>
-                        </div>
-                    </td>
-                    <td>K VS L</td>
-                    <td>
-                        <div>
-                            <button class="btn rounded-full update-btn">update</button>
-                            <button class="btn rounded-full delete-btn">delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="border-line">
-                    <td>A VS B</td>
-                    <td>
-                        <div>
-                            <button class="btn rounded-full update-btn">update</button>
-                            <button class="btn rounded-full delete-btn">delete</button>
-                        </div>
-                    </td>
-                    <td>E VS G</td>
-                    <td>
-                        <div>
-                            <button class="btn rounded-full update-btn">update</button>
-                            <button class="btn rounded-full delete-btn">delete</button>
-                        </div>
-                    </td>
-                </tr>
+                {% for x, y in first_data %}
                 <tr>
+                    <td class="text-center">{{y}}</td>
+                    <td>
+                        <div class="text-center">
+                            <button class="btn rounded-full update-btn mx-auto" value="{{x}}">update</button>
+                            <button class="btn rounded-full delete-btn mx-auto" value="{{x}}">delete</button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td class="text-center">? VS ?</td>
+                    <td>
+                        <div class="text-center">
+                            <a href="{% url 'pembuatan_pertandingan:select_stadium' 'A' %}" >
+                            <button class="btn rounded-full update-btn mx-auto">add</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
-                    <tr class="border-line">
-                        <td>A VS B</td>
-                        <td>
-                            <div>
-                                <button class="btn rounded-full update-btn">update</button>
-                                <button class="btn rounded-full delete-btn">delete</button>
-                            </div>
-                        </td>
-                        <td>C VS D</td>
-                        <td>
-                            <div>
-                                <button class="btn rounded-full update-btn">update</button>
-                                <button class="btn rounded-full delete-btn">delete</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                
-                <!-- Break -->
-                <tr style="background-color: #5C2AEA; color: white;">
-                    <td>Grup C</td>
-                    <td>Action</td>
-                    <td>Grup D</td>
-                    <td>Action</td>
+            <table class="w-full col-span-1">
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th ><p>Grup B</p></td>
+                    <th >Action</td>
                 </tr>
+                <!-- TODO: LOOP IN HERE -->
+                {% for x, y in second_data %}
                 <tr>
-                    <td>? VS ?</td>
+                    <td class="text-center">{{y}}</td>
                     <td>
-                        <div class="btn-group">
-                            <button class="btn rounded-full add-btn">add</button>
-                        </div>
-                    </td>
-                    <td>? VS ?</td>
-                    <td>
-                        <div>
-                            <button class="btn rounded-full add-btn">add</button>
+                        <div class="text-center">
+                            <button class="btn rounded-full update-btn mx-auto" value="{{x}}">update</button>
+                            <button class="btn rounded-full delete-btn mx-auto" value="{{x}}">delete</button>
                         </div>
                     </td>
                 </tr>
+                {% endfor %}
                 <tr>
+                    <td class="text-center">? VS ?</td>
+                    <td>
+                        <div class="text-center">
+                            <a href="{% url 'pembuatan_pertandingan:select_stadium' 'B' %}" >
+                                <button class="btn rounded-full update-btn mx-auto">add</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="w-full col-span-1">
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th ><p>Grup C</p></td>
+                    <th >Action</td>
+                </tr>
+
+                <!-- TODO: LOOP IN HERE -->
+
+                <tr>
+                    <td class="text-center">? VS ?</td>
+                    <td>
+                        <div class="text-center">
+                            <a href="{% url 'pembuatan_pertandingan:select_stadium' 'C' %}" >
+                                <button class="btn rounded-full update-btn mx-auto w-full" style="max-width: 20vh;">add</button>               
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="w-full col-span-1">
+                <tr class="head-text-table mt-10"style="background-color: #5C2AEA; color: white;">
+                    <th ><p>Grup D</p></td>
+                    <th >Action</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">? VS ?</td>
+                    <td>
+                        <div class="text-center">
+                            <a href="{% url 'pembuatan_pertandingan:select_stadium' 'D' %}" >
+                            <button class="btn rounded-full update-btn mx-auto w-full" style="max-width: 20vh;">add</button>
+                            </a>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
