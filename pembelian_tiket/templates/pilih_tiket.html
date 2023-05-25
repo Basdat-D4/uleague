@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_penonton.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pembelian Tiket Sepakbola</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+    <style>
+      table {width:80%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
+      tr {border-collapse: collapse; margin: 25px 0;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin-left:auto;margin-right:auto;} 
+      th,td {background-color: #f3f3f3; width:100px; text-align: center; height: 80px;}
+  </style>
+  </head>
+  
+  <body style="background-color: #f3f3f3;">
+    <div class="container mx-auto my-8">
+      <h1 class="text-3xl flex justify-center font-bold mb-4">Pembelian Tiket Sepakbola</h1>
+      
+      <form class="mx-auto w-full max-w-lg" action="" method="post">
+        {% csrf_token %}
+
+        <div class="flex flex-wrap mb-6">
+          <label class="w-full mb-2" for="dropdown">Stadium: </label>
+
+          <select id="id_stadium" name="id_stadium">
+            {% for stadium in stadium_list %}
+              <option value="{{ stadium.nama }}" >{{ stadium.nama }}</option>
+            {% endfor %}
+            </select>
+        </div>
+
+        <div class="flex flex-wrap mb-6" >
+          <label class="w-full mb-2" for="calendar">Tanggal: </label>
+          <input class="w-full border border-gray-400 p-2 rounded-lg" type="date" id="selected_dt" name="selected_dt" required> </div>
+        </div>
+       
+        <div class="flex items-center justify-center">
+
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type ="submit" style="background-color: blue;">Next</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+
+
+{% endblock content %}
