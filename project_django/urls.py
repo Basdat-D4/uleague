@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('example_app.urls')),
-    path('rapat/', include('rapat.urls')),
     path('', include('authentication.urls')),
+    path('admin/', admin.site.urls),
+    path('rapat/', include('rapat.urls')),
     path('mengelola_tim/', include('mengelola_tim.urls')),
     path('peminjaman_stadium/', include('peminjaman_stadium.urls')),
 ]
