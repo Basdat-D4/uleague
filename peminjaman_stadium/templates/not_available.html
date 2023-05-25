@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div class="text-center flex justify-center justify-items-center mt-10">
+        <h1 class="text-3xl font-bold text-gray-900">Stadium {{ nama_stadium }} tidak tersedia pada tanggal tersebut, silahkan pilih tanggal lain.</h1>
+    </div>
+</body>
+
+{% endblock content %}
