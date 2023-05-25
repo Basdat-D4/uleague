@@ -31,18 +31,23 @@
 
 
                 <tbody>
+                    {% for p in dataPemain %}
                     <tr class="bg-gray-200 border border-black border-2">
-                        <td class="py-2 px-4 border">Wendeline</td>
-                        <td class="py-2 px-4 border">1762534165</td>
-                        <td class="py-2 px-4 border">20/12/2004</td>
-                        <td class="py-2 px-4 border">FALSE</td>
-                        <td class="py-2 px-4 border">Kiper</td>
-                        <td class="py-2 px-4 border">34SPHVPISZ</td>
-                        <td class="py-2 px-4 border">S1</td>
-                        <td class="py-2 px-4 border">
-                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Make Caption Delete</button><br>
+                        <td class="py-2 px-4 border">{{p.nama}}</td>
+                        <td class="py-2 px-4 border">{{p.nomor_hp}}</td>
+                        <td class="py-2 px-4 border">{{p.tgl_lahir}}</td>
+                        <td class="py-2 px-4 border">{{p.is_captain}}</td>
+                        <td class="py-2 px-4 border">{{p.posisi}}</td>
+                        <td class="py-2 px-4 border">{{p.npm}}</td>
+                        <td class="py-2 px-4 border">{{p.jenjang}}</td>
+                        <td  class="py-2 px-4 border">
+                            {% if not p.is_captain %}
+                                <a href="{% url 'mengelola_tim:cek_captain' id=p.id_pemain %}" class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Make Captain</a>
+                            {% endif %}
+                                <a href="{% url 'mengelola_tim:delete_tim' id=p.id_pemain role='pemain' %}" class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Delete</a>
                         </td>
                     </tr>
+                    {% endfor %}
         
                 </tbody>
             </table>
@@ -68,28 +73,30 @@
 
 
                 <tbody>
+                    {% for p in dataPelatih %}
                     <tr class="bg-gray-200 border border-black border-2">
-                        <td class="py-2 px-4 border">Alzher</td>
-                        <td class="py-2 px-4 border">1862534165</td>
-                        <td class="py-2 px-4 border">alzher@gmail.com</td>
-                        <td class="py-2 px-4 border">Nirwana Estate</td>
-                        <td class="py-2 px-4 border">Pelatih Fisik</td>
+                        <td class="py-2 px-4 border">{{p.nama}}</td>
+                        <td class="py-2 px-4 border">{{p.nomor_hp}}</td>
+                        <td class="py-2 px-4 border">{{p.email}}</td>
+                        <td class="py-2 px-4 border">{{p.alamat}}</td>
+                        <td class="py-2 px-4 border">{{p.spesialisasi}}</td>
                         <td class="py-2 px-4 border">
-                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Delete</button><br>
+                            <a href="{% url 'mengelola_tim:delete_tim' id=p.id role='pelatih' %}" class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Delete</a>
                         </td>
                     </tr>
+                    {% endfor %}
         
                 </tbody>
             </table>
         </div>
 
         <div class="mt-5 flex items-center justify-center">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Pemain</button>
-            
+            <a href="{% url 'mengelola_tim:daftar_pemain' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Pemain</a>
+
         </div>
 
         <div class="mt-5 flex items-center justify-center">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Pelatih</button>
+            <a href="{% url 'mengelola_tim:daftar_pelatih' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Pelatih</a>
             
         </div>
 	</div>
