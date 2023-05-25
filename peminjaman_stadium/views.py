@@ -5,6 +5,11 @@ from django.db import connection
 
 # Create your views here.
 def show_list_pemesanan(request):
+
+    # check if user is authenticated
+    if 'username' not in request.COOKIES:
+        return HttpResponseRedirect("/login/")
+
     cursor = connection.cursor()
     cursor.execute(f'''
         select s.nama, p.start_datetime, p.end_datetime
