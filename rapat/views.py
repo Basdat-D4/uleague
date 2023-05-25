@@ -6,6 +6,11 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def show_pilih_pertandingan(request):
+
+    # cek udah login pa belom
+    if 'username' not in request.COOKIES:
+        return HttpResponseRedirect('/login/')
+    
     cursor = connection.cursor()
     cursor.execute(f'''
        SELECT
