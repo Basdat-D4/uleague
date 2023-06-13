@@ -1,0 +1,52 @@
+
+{% load static %}
+{% include 'navbar_penonton.html' %}
+
+<!DOCTYPE html>
+<html>
+    {% block meta %}
+    <head>
+        <title>Beli Tiket</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+        <style>
+            table {width:40%; border-collapse: collapse; margin: 30px 10px; font-size: 0.9em;font-family: sans-serif; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); margin-left:auto;margin-right:auto; }
+            tr {border-collapse: collapse; margin: 25px 0;font-size: 0.9em;font-family: sans-serif;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin-left:auto;margin-right:auto;} 
+            th,td {background-color: #f3f3f3; text-align: center; height: 30px;}
+        </style>
+    </head>
+    {% endblock meta %}
+
+    <body style="background-color: #f3f3f3;">
+        {% block content %}
+        <div class="wrapper">
+            <div class="box">
+                <div class="daftar-rapat" style="margin: 40px 30px;">
+                    <h1 style="margin-bottom: 40px;color: #0f0f12; text-align: center; font-size: 40px;"> {{ nama_stadium }}</h1>
+                    
+                    <table>
+                        <tr style="color: #55509c;">
+                                <th>List Waktu</th>
+                                <th>Action</th>
+                        </tr>
+                        {% for thetime in list_time %}
+
+                        <tr>
+                            <td>{{ thetime.list_waktu }}</td>
+
+                            <td style="height:100px;">
+                                <button onclick="window.location.href='../list/list_tanding'" style="background-color: rgb(100, 100, 237); height: 35px; width: 130px; border-radius: 10px; color:aliceblue;">List Pertandingan</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+
+                    </table>
+                </div>
+
+        {% endblock %}
+    </body>
+</html>

@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'authentication',
     'mengelola_tim',
     'peminjaman_stadium',
+    'pembelian_tiket',
+    'list_pertandingan',
+    'history_rapat',
 ]
 
 MIDDLEWARE = [
