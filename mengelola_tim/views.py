@@ -1,9 +1,11 @@
 from urllib import response
+from django.contrib import auth, messages
+from django.db import connection, DatabaseError
 from django.shortcuts import redirect, render
 import datetime
 from django.db import connection
 import uuid
-from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.http import  HttpResponseRedirect
 
 # Create your views here.
 def fetch(cursor):
@@ -270,16 +272,21 @@ def daftar_pelatih(request):
     }
     if request.method == 'POST':
         pelatih = request.POST.get('pelatih')
-        cursor.execute(
+        try:
+            cursor.execute(
             f"""
-            UPDATE PELATIH
+            UPDATE sepak_bola_c8.PELATIH
             SET nama_tim = '{nama_tim}'
             WHERE id_pelatih = '{pelatih}'
             ;
             """
-        )
-        connection.commit()
-        return redirect("/mengelola_tim/regis")        
+            )
+            connection.commit()
+            return redirect("/mengelola_tim/tim")
+        except DatabaseError as e:
+            messages.set_level(request, messages.ERROR)
+            messages.error(request, "1 tim hanya diperbolehkan memiliki 2 pelatih dengan spesialisasi berbeda")
+            return redirect("/mengelola_tim/daftar_pemain")     
     return render(request, "daftar_pelatih.html", context)
 
 
