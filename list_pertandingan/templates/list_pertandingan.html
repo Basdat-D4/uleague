@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- {% if role == 'Manajer' %}
-{% include 'navbar_manager.html' %}
-{% else if role == 'Penonton' %} -->
-
+{% if role == 'Manajer' %}
+{%include 'navbar_manager.html'%}
+{% elif role == 'Penonton' %}
 {% include 'navbar_penonton.html' %}
+{% endif %}
 
 
 <head>

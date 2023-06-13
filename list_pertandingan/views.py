@@ -1,14 +1,17 @@
 from django.shortcuts import render
 from django.db import connection
 from django.shortcuts import redirect, render
+from utils.users import get_user_role
 
 # Create your views here.
 def show_pertandingan(request):
-    # role = request.COOKIES.get('role')
-    # if role == None:
-    #     return redirect('authentication:login_user')
-    # if role not in ['Penonton', 'Manajer']:
-    #     return redirect('authentication:show_dashboard')
+    username = request.COOKIES['username']
+    role = get_user_role(username)
+    if role not in ['Penonton', 'Manajer']:
+        return redirect('authentication:show_dashboard')
+    elif role == ['Penonton', 'Manajer']:
+        return redirect('list_pertandingan:show_pertandingan')
+
     
     cursor = connection.cursor()
     cursor.execute(f'''
@@ -43,10 +46,5 @@ def show_pertandingan(request):
             'tanggal_dan_waktu': tanggal_dan_waktu
         })
 
-    context = {'pertandingan_list': pertandingan_list}
+    context = {'pertandingan_list': pertandingan_list, 'role':role}
     return render(request, "list_pertandingan.html", context)
-
-
-
-
-
