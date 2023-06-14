@@ -1,6 +1,4 @@
-{% include 'base.html' %}
-{% load static %}
-
+{% extends 'base.html' %}
 {% block content %}
 
 <style>
@@ -54,12 +52,14 @@
 
 
 <div class="navbar">
-    <a href="#dashboard">Dashboard</a>
-    <a href="#mengelolatim">Mengelola Tim</a>
-    <a href="#peminjamanstadium">Peminjaman Stadium</a>
-    <a href="#listpertandingan">List Pertandingan</a>
-    <a href="#historyrapat">History Rapat</a>
-    <button class="logout-btn">Logout</button>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/mengelola_tim">Mengelola Tim</a>
+    <a href="/peminjaman_stadium">Peminjaman Stadium</a>
+    <a href="/list_pertandingan/">List Pertandingan</a>
+    <a href="/history_rapat">History Rapat</a>
+    <a href="/logout">
+        <button class="logout-btn">Logout</button>
+    </a>
 </div>
 
 {% endblock content %}

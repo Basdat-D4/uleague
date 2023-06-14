@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
+
+    <title>Navbar Panitia</title>
 </head>
 
 <style>
@@ -58,12 +58,11 @@ body {
 }
 </style>
 
-<body>
-    <div class="topnav">
-		<a href="#dashboard">Dashboard</a>
-		<a href="#rapat">Rapat</a>
-		<a href="#managepertandingan">Manage Pertandingan</a>
+<div class="topnav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/rapat/">Rapat</a>
+    <a href="/pembuatan_pertandingan/">Manage Pertandingan</a>
+    <a href="/logout/">
         <button class="logout-btn">Logout</button>
-	</div>
-</body>
-</html>
+    </a>
+</div>

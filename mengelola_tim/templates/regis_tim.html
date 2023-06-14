@@ -18,12 +18,12 @@
 
         <div class="flex flex-wrap mb-6;">
           <label class="w-full mb-2" for="form">Nama Tim :  </label>
-          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="isi-rapat" name="isi_rapat" rows="1" cols="5" required></textarea>
+          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="team_name" name="team_name"  rows="1" cols="5" required></textarea>
         </div>
 
         <div class="flex flex-wrap mb-6;">
           <label class="w-full mb-2" for="form">Nama Universitas : </label>
-          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="isi-rapat" name="isi_rapat" rows="1" cols="5" required></textarea>
+          <textarea class="w-full border border-gray-400 p-2 rounded-lg" id="university_name" name="university_name"  rows="1" cols="5" required></textarea>
         </div>
        
         <div class="flex flex-wrap mb-6;">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="flex items-center justify-center">
-          <submit class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="submit">Daftar</submit>
+          <a href="{% url 'mengelola_tim:show_tim' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Daftar</a>
         </div>
       </form>
     </div>

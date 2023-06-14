@@ -29,13 +29,12 @@ def show_home_pembuatan_pertandingan(request):
     ST = ST.join(map(str, data))
     result = ST.split(") (")
     DATA =[]
-    print(ST)
-    for item in result:
-        items = item.split("', '")
-        print("result" + str(items))
+    # print(ST)
+    for item in result:   
+        items = item.split(", ")
         byte = [
-            items[0].replace("'", "").replace("(", "").replace(")",""), 
-            items[1].replace("'", "").replace("(","").replace(")", "")
+            items[0].replace("UUID('", "").replace(")","").replace("'", ""), 
+            items[1].replace("'", "").replace(")","")
         ]
         print(byte)
         DATA.append(byte)
@@ -70,7 +69,7 @@ def show_home_pembuatan_pertandingan(request):
 
 def select_stadium(request, group):
 
-    fetch_data = execute_query("SELECT universitas FROM TIM;")
+    fetch_data = execute_query("SELECT nama FROM STADIUM;")
     fetch_data = list(fetch_data)
     ST = ' '
     ST = ST.join(map(str, fetch_data))
@@ -113,10 +112,12 @@ def select_time_stadium(request, data):
     # DATA_FETCH = execute_query(f'''
         
     # ''')
+    
     return render(request, "select_time.html", {
+        'stadium' : data['stadium'],
         'result' : [
             {'stadium' : data['stadium'],
-            'waktu' : '07.00 - 09.00',
+            'waktu' : '07.00 - 09.00',  
             'status': False
              },
             {'stadium' : data['stadium'],

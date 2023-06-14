@@ -14,40 +14,25 @@
     <div class="container mx-auto my-8">
       <h1 class="text-3xl flex justify-center font-bold mb-4">PEMINJAMAN STADIUM</h1>
       
-      <form class="mx-auto w-full max-w-lg" action="/pilih-stadium" method="post">
-
+      <form id="stadiumForm" class="mx-auto w-full max-w-lg" action="{% url 'peminjaman_stadium:show_list_waktu' %}" method="POST">
+        {% csrf_token %}
         <div class="flex flex-wrap mb-6;">
           <label class="w-full mb-2" for="form">Stadium :   </label>
-          <select id="dropdown">
-            <option value="option1">Stadion Internasional Jakarta</option>
-            <option value="option2">Stadion Utama Gelora Bung Karno</option>
-            <option value="option3">Stadion Gelora Bung Tomo</option>
-            <option value="option3">Stadion Batakan</option>
-            <option value="option3">Stadion Sultan Agung</option>
-            <option value="option3">Stadion Mandala</option>
-            <option value="option3">Stadion Si Jalak Harumpat</option>
-            <option value="option3">Stadion Manahan</option>
-            <option value="option3">Stadion Wibawa Mukti</option>
-            <option value="option3">Stadion Kaharudin Nasution Rumbai</option>
-            <option value="option3">Stadion Gajayana</option>
-            <option value="option3">Stadion Internasional Banten</option>
-          </select>        
+          
+          <select id="id_stadium" name="id_stadium">
+          {% for stadium in stadium_list %}
+            <option value="{{ stadium.id_stadium }}">{{ stadium.nama }}</option>
+          {% endfor %}
+          </select>
         </div>
 
         <div class="flex flex-wrap mb-6;">
           <label class="w-full mb-2" for="form">Tanggal :   </label>
-               
-          <form>
-            <input type="date" class="form-control" id="tanggal">
-          </form>
+          <input type="date" class="form-control" id="date" name="date">
         </div>
 
-        
-        <div class="flex flex-wrap mb-6;">
-          <label class="w-full mb-2" for="form"> </label>
-        </div>
         <div class="flex items-center justify-center">
-          <submit class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="submit">Submit</submit>
+          <button id="idSubmit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" type="submit">Submit</button>
         </div>
       </form>
     </div>

@@ -18,7 +18,7 @@
           <h5 class="flex justify-center text-3xl font-bold mb-4">List Waktu </h5>
       </div>
       <div class="mt-1 flex justify-center">
-          <button class="hover:bg-blue-700 text-blue font-bold py-1 px-4 rounded-full">Stadium Gelora Bungkarno</button><br>
+          <button class="hover:bg-blue-700 text-blue font-bold py-1 px-4 rounded-full">{{ nama_stadium }}</button><br>
         </h5>
     </div>
 
@@ -26,7 +26,8 @@
             <table class="table-auto border border-gray-300">
                 <thead>
                     <tr class="bg-gray-700 text-gray-200">
-                        <th class="py-2 px-4 border">List Waktu</th>
+                        <th class="py-2 px-4 border">Tanggal Pemesanan</th>
+                        <th class="py-2 px-4 border">Status</th>
                         <th class="py-2 px-4 border">Action</th>
                     </tr>
                 </thead>
@@ -34,20 +35,15 @@
 
                 <tbody>
                     <tr class="bg-gray-200 border border-black border-2">
-                        <td class="py-2 px-4 border">01/06/2023 7:31:12</td>
+                        <td class="py-2 px-4 border">{{ date }}</td>
+                        <td class="py-2 px-4 border">Berhasil dipinjam</td>
                         <td class="py-2 px-4 border">
-                            <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Pesan</button><br>
+                            <a href="/dashboard/">
+                                <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Back</button><br>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
-                <tbody>
-                  <tr class="bg-gray-200 border border-black border-2">
-                      <td class="py-2 px-4 border">01/03/2023 5:31:12</td>
-                      <td class="py-2 px-4 border">
-                          <button class="hover:bg-blue-700 text-blue font-bold py-2 px-4 rounded-full">Pesan</button><br>
-                      </td>
-                  </tr>
-              </tbody>
             </table>
         </div>
 	</div>
