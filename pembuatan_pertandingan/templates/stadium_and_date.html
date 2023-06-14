@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_panitia.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+	<div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Pembuatan</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+    <div style="min-width: 50vw; " >
+        <div>
+            <p class="text-xl font-bold	text-center	">
+                Pembuatan Pertandingan
+            </p>
+        </div>
+
+           <form id="form" action="" method="POST">
+            <div style="padding: 2rem; width: 50vh; margin: auto; border-radius: 30px; background-color: white; margin-top: 20px; font-size: 15px; font-weight: 500;" >
+
+            {% csrf_token %}
+                <div class=" grid grid-cols-2">
+                    <p>Stadium</p>
+                    <select name="stadium" 
+                     id="stadium" style="width: 100%;">
+                        {% for DATA in daftar_stadium %}
+                        <option value="{{DATA}}">{{DATA}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-20 grid grid-cols-2">
+                    <p>Tanggal Mulai</p>
+                    <input type="date" id="tanggal" name="tanggal" style="width: 100%;">
+                </div>
+            </div>
+            <input class="rounded-full" type="submit" value="Next" style="background-color: #5C2AEA; color: white; padding: 0.5rem 4rem; display: block; margin: auto; margin-top: 20px;">
+           </form>
+</body>
+
+
+{% endblock content %}

@@ -22,6 +22,8 @@ urlpatterns = [
     path('rapat/', include('rapat.urls')),
     path('mengelola_tim/', include('mengelola_tim.urls')),
     path('peminjaman_stadium/', include('peminjaman_stadium.urls')),
+    path('pembuatan_pertandingan/', include(('pembuatan_pertandingan.urls', 'permbuatan_pertandingan'), namespace='pembuatan_pertandingan')),
+    path('manage-pertandingan/', include('manage_pertandingan.urls')),
     path('pembelian_tiket/', include ('pembelian_tiket.urls')),
     path('list_pertandingan/', include ('list_pertandingan.urls')),
     path('history_rapat/', include ('history_rapat.urls')),

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar_panitia.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <div style="padding: 3rem; font-style: normal; font-weight: 600; font-size: 30px;">
+        <p>Manage</p>
+        <div style="background-color: #5C2AEA; width: fit-content; padding: 4px; color: white;">
+            <p>Pertandingan</p>
+        </div>
+    <hr style="margin-top: 40px; color: #5C2AEA;">
+    </div>
+
+	<div>
+        <div style="text-align: center; font-size: 20px; ">
+            <p style="font-weight:600;">Ini Akhir Musim!</p>
+            <p style="font-weight:300;">Klik tombol next untuk membuat pertandingan baru</p>
+        </div>
+        <a  style="width: 100%;"><button class="rounded-full" style="background-color: #5C2AEA; color: white; padding: 0.5em 4em; display: block; margin: auto; margin-top: 20px;">Next</button></a>
+    </div>
+</body>
+
+{% endblock content %}
